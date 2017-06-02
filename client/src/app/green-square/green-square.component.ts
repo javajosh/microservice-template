@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-green-square',
   templateUrl: './green-square.component.html',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GreenSquareComponent implements OnInit {
   public width : number = 100;
-  public height : number = 200;
+  public height : number = 100;
 
+  private timerId : number;
   constructor() { }
 
   ngOnInit() {
-    //TODO: make this work
-    setInterval(()=>{this.height++; console.log(this.height)}, 100);
+    this.timerId = setInterval(()=>{
+      this.height++; this.width++;
+      // console.log(this.height, this.width)
+    }, 100);
   }
 
+  stop(){
+    clearInterval(this.timerId);
+  }
 }

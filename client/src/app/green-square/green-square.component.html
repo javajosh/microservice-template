@@ -1,3 +1,11 @@
-<p style="font-size: 10px">height: {{height}}  </p>
-<div class="green-square" [style.height]="height + 'px' "></div>
+<p style="font-size: 10px">height: {{height}}</p>
+<div
+  class="green-square"
+  [style.height]="height + 'px' "
+  [style.width]="width + 'px' "
+  (click)="stop()"
+>
+<span>Click to stop</span>
+</div>
+
 
