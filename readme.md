@@ -9,20 +9,29 @@ This repo is a micro-service template with one directory (module) per *top-level
 java/play, and db is linux/mysql. This project is buildable from the 
 command-line in macOS, Windows, and Linux. 
 
-This repo includes IntelliJ project files, but any IDE is optional, and the 
-command-line will always be the *canonical* way to build.
+This repo includes IntelliJ project files, but an IDE is optional, and *the 
+command-line will always be the canonical way to build*.
 
 
 ## Building, Running, Testing
 
-First, install the necessary tooling. Installing the required tooling is made much easier if you use a package manager. 
+First, install the necessary tooling: `java`, `sbt`, `yarn`, `@angular/cli`, `mysql`, and `git`.
+Installing the required tooling is made much easier if you use a package manager. 
 I suggest homebrew for macOS, chocolatey for Windows, and apt-get or rpm
-for Linux. Install the Oracle JDK manually.
+for Linux. Install the Oracle JDK manually. Optional (but very useful) packages
+include mysql.workbench and curl. Note that installing `yarn` will also typically install
+`node` and `npm`.
 
-Each top-level process is built, run, tested separately. 
+Each top-level process is built, run, tested separately. Unlike most templates of this
+type, you don't have to run all processes at once. You can run any of them independently,
+and they will use local stubs to keep going. In general, since applications are for humans,
+follow a *top-down* approach, starting with the UI, and working down to implement the necessary
+features.
 
 The *initial build* for these projects will take extra time and bandwidth
 as they download their (copious) dependencies. Subsequent runs will be much faster.
+
+If you use IntelliJ, install the `Scala` and `AngularJS` plugins.
 
 
 ### Run the Client (Angular)
@@ -56,9 +65,14 @@ for "enviroment variables" on the start menu).
 
 ## Collaborative Development
 
+## Ideas
+
+Use Liquibase for DB migration; JDBI for server/DB comms. Use Jersey for REST. 
+Use `nginx` in reverse-proxy to integrate client and server under a single port.
+Experiment with integrating client/server build. 
 
 
-## How this project was started
+## How this project was initialized
 
 The initial commit contains the result of this recipe:
 
