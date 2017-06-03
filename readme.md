@@ -82,3 +82,5 @@ The initial commit contains the result of this recipe:
  3. `sbt new playframework/play-java-seed.g8 server`
  4. `ng new --router client`
  5. Various fiddling with IntelliJ to setup the module structure.
+ 
+Later I added the material component library, `yarn add @angular/material`.
