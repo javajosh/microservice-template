@@ -37,7 +37,7 @@ If you use IntelliJ, install the `Scala` and `AngularJS` plugins.
 ### Run the Client (Angular)
 
 
-Start a development session with `ng -o`. This command will start a persistent development server
+Start a development session with `ng serve -o`. This command will start a persistent development server
 with live-reload, and open a new default browser at [http://localhost:4200](http://localhost:4200).
 
 Build for production with `ng -prod`, which will output to `dist/`. (Angular
