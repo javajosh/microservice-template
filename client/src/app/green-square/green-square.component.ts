@@ -10,7 +10,7 @@ export class GreenSquareComponent implements OnInit {
   public width : number = 100;
   public height : number = 100;
 
-  private timerId : number;
+  private timerId : any;
   constructor() { }
 
   ngOnInit() {
