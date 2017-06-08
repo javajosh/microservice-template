@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { TdDialogService } from '@covalent/core';
-import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn, IPageChangeEvent } from '@covalent/core';
+import {
+  TdDataTableService,
+  TdDataTableSortingOrder,
+  ITdDataTableSortChangeEvent,
+  ITdDataTableColumn,
+  IPageChangeEvent
+}from '@covalent/core';
 
 @Component({
   selector: 'app-mytable',
@@ -14,27 +19,25 @@ export class MyTableComponent implements OnInit {
 
   ngOnInit() {
   }
+
   data: any[] = [
     { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
-    { sku: '1421-0', item: 'Prime Rib', price: 41.15 },
-    { sku: '1424-0', item: 'Prime Rib', price: 41.15 },
-    { sku: '1423-0', item: 'Prime Rib', price: 41.15 },
+    { sku: '1421-1', item: 'Prime Rib', price: 5.15 },
+    { sku: '1424-3', item: 'Prime Rib', price: 71.15 },
+    { sku: '1423-40', item: 'Prime Rib', price: 41.15 },
+    { sku: '1423-5', item: 'Prime Rib', price: 33.15 },
+    { sku: '1423-6', item: 'Prime Rib', price: 94.15 },
+    { sku: '1423-7', item: 'Prime Rib', price: 744567.15 },
+    { sku: '1423-8', item: 'Prime Rib', price: 1.15 },
   ];
   columns: ITdDataTableColumn[] = [
     { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-    { name: 'item', label: 'Item name', sortable:true },
-    { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2) },
+    { name: 'item', label: 'Item name' },
+    { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), filter: true },
   ];
 
   openPrompt(row: any, name: string): void {
-    // this._dialogService.openPrompt({
-    //   message: 'Enter comment?',
-    //   value: row[name],
-    // }).afterClosed().subscribe((value: any) => {
-    //   if (value !== undefined) {
-    //     row[name] = value;
-    //   }
-    // });
+
   }
 
   filteredData: any[] = this.data;
@@ -47,6 +50,10 @@ export class MyTableComponent implements OnInit {
   sortBy: string = 'sku';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
+  selectable : boolean = true;
+  selectedRows : any[] = [];
+  clickable : boolean = true;
+  multiple : boolean = true;
 
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {

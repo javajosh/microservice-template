@@ -10,7 +10,13 @@ import {
 } from '@angular/material';
 
 //Import Covalent Modules.
-import { CovalentLayoutModule, CovalentStepsModule, CovalentDataTableModule } from '@covalent/core';
+import {
+  CovalentLayoutModule,
+  CovalentStepsModule,
+  CovalentDataTableModule,
+  CovalentPagingModule,
+  CovalentSearchModule,
+} from '@covalent/core';
 // (optional) Additional Covalent Modules imports
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
@@ -49,7 +55,8 @@ import { UserComponent } from './user/user.component';
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentDataTableModule,
-
+    CovalentPagingModule,
+    CovalentSearchModule,
 
   ],
   providers: [],
