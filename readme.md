@@ -1,8 +1,11 @@
 # Micro-service Application Template
-*Josh Rehman <josh@javajosh.com> 2 June 2017*
+*@javajosh 2017*
 
 
 ## Introduction
+
+> There are only two hard things in Computer Science: cache invalidation and naming things. <br><br>
+> -- Phil Karlton
 
 This repo is a micro-service template with one directory (module) per *top-level process*: 
 `client`, `server`, and `db`. In this case, the client is browser/angular, server is
