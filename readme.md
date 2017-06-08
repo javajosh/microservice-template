@@ -48,16 +48,19 @@ npm rebuild node-sass
 Start a development session with `ng serve -o`. This command will start a persistent development server
 with live-reload, and open a new default browser at [http://localhost:4200](http://localhost:4200).
 
-Build for production with `ng -prod`, which will output to `dist/`. (Angular
+Build for production with `ng build --prod`, which will output to `dist/`. (Angular
 includes a powerful set of tools for minimizing and tree-shaking, however even
-the simplest client will be ~300kB.)
+the simplest client will be ~300kB.) (A good option for testing production output is to `npm install -g http-server` and then run `http-server` from within the `dist/` folder.)
 
 There are many other helpful `ng` commands for generating code, linting,
 testing and more.
 
 The runtime is built on JavaScript, HTML, and CSS. The build is 
-built on TypeScript, Angular Template Language, and SCSS. 
+built on TypeScript, Angular Template Language, and SCSS.
 
+Note: even for a very basic client, the *production* build is huge, over 2MB, which is mostly dependency javascript. (In this example there is 1.8MB of dependency, and 30kB of application script). 
+
+![File size Image](filesize.png)
 
 ### Run the Server (Play)
 

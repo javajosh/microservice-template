@@ -8,7 +8,7 @@
       [numeric]="column.numeric">
     {{column.label}}
   </th>
-  <tr td-data-table-row *ngFor="let row of basicData">
+  <tr td-data-table-row *ngFor="let row of data">
     <td td-data-table-cell (click)="openPrompt(row, 'comments')">
       <button md-button [class.mat-accent]="!row['comments']">{{row['comments'] || 'Add Comment'}}</button>
     </td>

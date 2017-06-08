@@ -23,13 +23,15 @@ import { GreenSquareComponent } from './green-square/green-square.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyTableComponent } from './mytable/mytable.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GreenSquareComponent,
-    MyTableComponent
+    MyTableComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,8 @@ import { MyTableComponent } from './mytable/mytable.component';
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentDataTableModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
