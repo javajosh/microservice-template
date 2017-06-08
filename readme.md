@@ -36,8 +36,16 @@ If you use IntelliJ, install the `Scala` and `AngularJS` plugins.
 
 ### Run the Client (Angular)
 
+`yarn install` but then you need to [install node-sass](https://github.com/sass/node-sass/issues/1579#issuecomment-227661284) separately:
 
-Start a development session with `ng -o`. This command will start a persistent development server
+```$bash
+npm update
+npm install
+nodejs node_modules/node-sass/scripts/install.js
+npm rebuild node-sass
+```
+
+Start a development session with `ng serve -o`. This command will start a persistent development server
 with live-reload, and open a new default browser at [http://localhost:4200](http://localhost:4200).
 
 Build for production with `ng -prod`, which will output to `dist/`. (Angular
@@ -83,4 +91,6 @@ The initial commit contains the result of this recipe:
  4. `ng new --router client`
  5. Various fiddling with IntelliJ to setup the module structure.
  
-Later I added the material component library, `yarn add @angular/material`.
+Later I added the [Angular Material](https://material.angular.io/) component library, `yarn add @angular/material`. This includes basic things like checkboxes, dropdowns, with themable styles and so on.
+
+Even later, I added the excellent [Teradata Covalent](https://teradata.github.io/covalent/#/docs) components. Provides more advanced components, in particular a grid component.

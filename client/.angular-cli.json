@@ -19,8 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
-        "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+        "styles.scss",
+        "theme.scss",
+        "../node_modules/@covalent/core/common/platform.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -52,7 +53,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
