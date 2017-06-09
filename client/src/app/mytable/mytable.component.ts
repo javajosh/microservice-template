@@ -6,6 +6,7 @@ import {
   ITdDataTableColumn,
   IPageChangeEvent
 }from '@covalent/core';
+import {User} from "../user/user";
 
 @Component({
   selector: 'app-mytable',
@@ -20,25 +21,23 @@ export class MyTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  data: any[] = [
-    { sku: '1452-2', item: 'Pork Chops', price: 32.11 },
-    { sku: '1421-1', item: 'Prime Rib', price: 5.15 },
-    { sku: '1424-3', item: 'Prime Rib', price: 71.15 },
-    { sku: '1423-40', item: 'Prime Rib', price: 41.15 },
-    { sku: '1423-5', item: 'Prime Rib', price: 33.15 },
-    { sku: '1423-6', item: 'Prime Rib', price: 94.15 },
-    { sku: '1423-7', item: 'Prime Rib', price: 744567.15 },
-    { sku: '1423-8', item: 'Prime Rib', price: 1.15 },
+
+
+  data: User[] = [
+    new User(1,'smith', 'alice', new Date('1991')),
+    new User(2,'smith', 'bob', new Date('1992')),
+    new User(3,'smith', 'charlie', new Date('1993')),
+    new User(4,'smith', 'dave', new Date('1994')),
+    new User(5,'smith', 'eric', new Date('1995')),
+    new User(6,'smith', 'frank', new Date('1996')),
   ];
+
   columns: ITdDataTableColumn[] = [
-    { name: 'sku', label: 'SKU #', tooltip: 'Stock Keeping Unit' },
-    { name: 'item', label: 'Item name' },
-    { name: 'price', label: 'Price (US$)', numeric: true, format: v => v.toFixed(2), filter: true },
+    { name: 'id', label: 'ID', tooltip: 'User Identification' },
+    { name: 'first_name', label: 'First Name' },
+    { name: 'last_name', label: 'Last Name' },
+    { name: 'dob', label: 'Date of Birth', numeric: true, format: v => v.toString(), filter: true },
   ];
-
-  openPrompt(row: any, name: string): void {
-
-  }
 
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
@@ -47,7 +46,7 @@ export class MyTableComponent implements OnInit {
   fromRow: number = 1;
   currentPage: number = 1;
   pageSize: number = 5;
-  sortBy: string = 'sku';
+  sortBy: string = 'id';
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   selectable : boolean = true;

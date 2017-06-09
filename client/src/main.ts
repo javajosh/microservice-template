@@ -38,3 +38,10 @@ assert(baz.a === 1, 'baz.a ==1 ');
 
 //enum
 enum Colors {RED, BLUE,GREEN};
+
+//classes and instances
+
+class User {
+  constructor(public id : number, public name : string, public dob : Date){}
+}
+let u : User = new User(1, 'alice', new Date('1999'));

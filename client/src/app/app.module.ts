@@ -12,15 +12,10 @@ import {
 //Import Covalent Modules.
 import {
   CovalentLayoutModule,
-  CovalentStepsModule,
   CovalentDataTableModule,
   CovalentPagingModule,
   CovalentSearchModule,
 } from '@covalent/core';
-// (optional) Additional Covalent Modules imports
-import { CovalentHttpModule } from '@covalent/http';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 //Import a locally defined Component
@@ -48,11 +43,7 @@ import { UserComponent } from './user/user.component';
     MdCheckboxModule,
 
     CovalentLayoutModule,
-    CovalentStepsModule,
     // (optional) Additional Covalent Modules imports
-    CovalentHttpModule.forRoot(),
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentDataTableModule,
     CovalentPagingModule,
